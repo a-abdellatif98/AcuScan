@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2020_04_15_124245) do
     t.date "dob"
     t.integer "mobile"
     t.string "adress"
-    t.integer "NationalId"
+    t.bigint "NationalId"
     t.integer "Role"
     t.string "gender"
     t.datetime "created_at", precision: 6, null: false

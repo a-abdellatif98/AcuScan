@@ -36,7 +36,7 @@ class DeviseCreateAdmins < ActiveRecord::Migration[6.0]
       t.date :dob
       t.integer :mobile
       t.string :adress
-      t.integer :NationalId
+      t.bigint :NationalId
       t.integer :Role
       t.string :gender
 

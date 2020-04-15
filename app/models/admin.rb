@@ -8,10 +8,10 @@ class Admin < ApplicationRecord
   
   #validates :email,       presence: true, uniqueness: true, confirmation: true     
   #validates :mobile,      presence: { message: "must be given please" }, uniqueness: true, length: { is: 11 }
-  #validates :NationalId, presence: { message: "must be given please" }, uniqueness: true, length: { is: 14 }
+  validates :NationalId, presence: { message: "must be given please" }, uniqueness: true, length: { is: 14 }
             
-  def setRole
-    self.role = 9
+  def Admin.role
+    9
   end
 
   
