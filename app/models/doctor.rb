@@ -9,9 +9,14 @@ class Doctor < ApplicationRecord
   validates :mobile,      presence: { message: "must be given please" }, uniqueness: true, length: { is: 11 }
   validates :NationalId, presence: { message: "must be given please" }, uniqueness: true, length: { is: 14 }
 
-  def setRole
-    self.role = 5
+  after_initialize :role=          
+  
+  def role=(value=3)
+    write_attribute(:Role,value)
   end
 
+  def role
+    read_attribute(:role) || 3
+  end
     
 end

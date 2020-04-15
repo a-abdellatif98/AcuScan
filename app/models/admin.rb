@@ -6,13 +6,21 @@ class Admin < ApplicationRecord
 
 
   
-  #validates :email,       presence: true, uniqueness: true, confirmation: true     
-  #validates :mobile,      presence: { message: "must be given please" }, uniqueness: true, length: { is: 11 }
-  validates :NationalId, presence: { message: "must be given please" }, uniqueness: true, length: { is: 14 }
-            
-  def Admin.role
-    9
+  validates :email,       presence: true, uniqueness: true, confirmation: true
+  #validates :mobile,      presence: true, uniqueness: true, length: { is: 11 }
+  validates :NationalId,  presence: true, uniqueness: true, length: { is: 14 }
+  
+  
+  after_initialize :role=          
+  
+  def role=(value=9)
+    write_attribute(:Role,value)
   end
+
+  def role
+    read_attribute(:role) || 9
+  end
+
 
   
 end

@@ -12,9 +12,14 @@ class Receptionest < ApplicationRecord
   has_many :visits
 
   
-  def setRole
-    self.role = 1
+  after_initialize :role=          
+  
+  def role=(value=1)
+    write_attribute(:Role,value)
   end
 
+  def role
+    read_attribute(:role) || 1
+  end
 
 end
