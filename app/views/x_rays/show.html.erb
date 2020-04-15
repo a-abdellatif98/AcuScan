@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Image url:</strong>
+  <%= @x_ray.image_url %>
+</p>
+
+<p>
+  <strong>Paitent:</strong>
+  <%= @x_ray.paitent_id %>
+</p>
+
+<p>
+  <strong>Labele:</strong>
+  <%= @x_ray.labele %>
+</p>
+
+<%= link_to 'Edit', edit_x_ray_path(@x_ray) %> |
+<%= link_to 'Back', x_rays_path %>

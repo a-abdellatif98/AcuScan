@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @paitent.name %>
+</p>
+
+<p>
+  <strong>Adress:</strong>
+  <%= @paitent.adress %>
+</p>
+
+<p>
+  <strong>National:</strong>
+  <%= @paitent.National_id %>
+</p>
+
+<p>
+  <strong>Visits:</strong>
+  <%= @paitent.visits_id %>
+</p>
+
+<p>
+  <strong>Mobile:</strong>
+  <%= @paitent.mobile %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @paitent.gender %>
+</p>
+
+<p>
+  <strong>Dob:</strong>
+  <%= @paitent.dob %>
+</p>
+
+<%= link_to 'Edit', edit_paitent_path(@paitent) %> |
+<%= link_to 'Back', paitents_path %>

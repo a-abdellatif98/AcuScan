@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  label: MyString
+  date: 2020-04-15
+  paitent_id: 
+  doctor_id: 
+
+two:
+  label: MyString
+  date: 2020-04-15
+  paitent_id: 
+  doctor_id: 

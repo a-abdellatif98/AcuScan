@@ -1,0 +1,2 @@
+module XRaysHelper
+end
