@@ -4,5 +4,17 @@ class Receptionest < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :visits         
+  
+  validates :email,       presence: true, uniqueness: true, confirmation: true     
+  validates :mobile,      presence: { message: "must be given please" }, uniqueness: true, length: { is: 11 }
+  validates :NationalId, presence: { message: "must be given please" }, uniqueness: true, length: { is: 14 }
+     
+  has_many :visits
+
+  
+  def setRole
+    self.role = 1
+  end
+
+
 end
