@@ -18,18 +18,18 @@
 
   <tbody>
     <% @paitents.each do |paitent| %>
-      <tr>
-        <td><%= paitent.name %></td>
-        <td><%= paitent.adress %></td>
-        <td><%= paitent.National_id %></td>
-        <td><%= paitent.visits_id %></td>
-        <td><%= paitent.mobile %></td>
-        <td><%= paitent.gender %></td>
-        <td><%= paitent.dob %></td>
-        <td><%= link_to 'Show', paitent %></td>
-        <td><%= link_to 'Edit', edit_paitent_path(paitent) %></td>
-        <td><%= link_to 'Destroy', paitent, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <tr>
+      <td><%= paitent.name %></td>
+      <td><%= paitent.adress %></td>
+      <td><%= paitent.National_id %></td>
+      <td><%= paitent.visits_id %></td>
+      <td><%= paitent.mobile %></td>
+      <td><%= paitent.gender %></td>
+      <td><%= paitent.dob %></td>
+      <td><%= link_to 'Show', paitent %></td>
+      <td><%= link_to 'Edit', edit_paitent_path(paitent) %></td>
+      <td><%= link_to 'Destroy', paitent, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
     <% end %>
   </tbody>
 </table>
@@ -38,5 +38,6 @@
 
 
 <%= link_to 'New Paitent', new_paitent_path %>
-<li class="nav-item"><%= link_to "Logout", destroy_admin_session_path, method: :delete, class: "nav-link" %></li>
-    
+<li class="nav-item">
+  <%= link_to "Logout", (admin_signed_in?) ? destroy_admin_session_path : destroy_admin_session_path , method: :delete, class: "nav-link" %>
+</li>

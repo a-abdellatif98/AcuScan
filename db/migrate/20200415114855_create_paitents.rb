@@ -3,7 +3,7 @@ class CreatePaitents < ActiveRecord::Migration[6.0]
     create_table :paitents do |t|
       t.string :name
       t.string :adress
-      t.integer :National_id
+      t.bigint :National_id
       t.integer :visits_id
       t.integer :mobile
       t.string :gender

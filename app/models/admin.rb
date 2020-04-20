@@ -4,24 +4,10 @@ class Admin < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-
-  
   validates :email,       presence: true, uniqueness: true, confirmation: true
+  validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :on => :create
   #validates :mobile,      presence: true, uniqueness: true, length: { is: 11 }
   validates :NationalId,  presence: true, uniqueness: true, length: { is: 14 }
-  
-  
-  after_initialize :role=          
-  
-  def role=(value=9)
-    write_attribute(:Role,value)
-  end
-
-  def role
-    read_attribute(:role) || 9
-  end
-
-
   
 end
 

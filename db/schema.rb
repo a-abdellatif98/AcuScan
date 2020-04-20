@@ -23,10 +23,9 @@ ActiveRecord::Schema.define(version: 2020_04_15_124245) do
     t.datetime "remember_created_at"
     t.string "name"
     t.date "dob"
-    t.integer "mobile"
+    t.bigint "mobile"
     t.string "adress"
     t.bigint "NationalId"
-    t.integer "Role"
     t.string "gender"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -42,10 +41,9 @@ ActiveRecord::Schema.define(version: 2020_04_15_124245) do
     t.datetime "remember_created_at"
     t.string "name"
     t.date "dob"
-    t.integer "mobile"
+    t.bigint "mobile"
     t.string "adress"
-    t.integer "NationalId"
-    t.integer "Role"
+    t.bigint "NationalId"
     t.string "gender"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -56,7 +54,7 @@ ActiveRecord::Schema.define(version: 2020_04_15_124245) do
   create_table "paitents", force: :cascade do |t|
     t.string "name"
     t.string "adress"
-    t.integer "National_id"
+    t.bigint "National_id"
     t.integer "visits_id"
     t.integer "mobile"
     t.string "gender"
@@ -73,10 +71,9 @@ ActiveRecord::Schema.define(version: 2020_04_15_124245) do
     t.datetime "remember_created_at"
     t.string "name"
     t.date "dob"
-    t.integer "mobile"
+    t.bigint "mobile"
     t.string "adress"
-    t.integer "NationalId"
-    t.integer "Role"
+    t.bigint "NationalId"
     t.string "gender"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -105,10 +102,9 @@ ActiveRecord::Schema.define(version: 2020_04_15_124245) do
     t.datetime "remember_created_at"
     t.string "name"
     t.date "dob"
-    t.integer "mobile"
+    t.bigint "mobile"
     t.string "adress"
-    t.integer "NationalId"
-    t.integer "Role"
+    t.bigint "NationalId"
     t.string "gender"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

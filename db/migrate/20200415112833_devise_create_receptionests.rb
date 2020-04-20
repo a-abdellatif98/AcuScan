@@ -34,10 +34,10 @@ class DeviseCreateReceptionests < ActiveRecord::Migration[6.0]
 
       t.string :name
       t.date :dob
-      t.integer :mobile
+      t.bigint :mobile
       t.string :adress
-      t.integer :NationalId
-      t.integer :Role
+      t.bigint :NationalId
+      #t.integer :Role
       t.string :gender
 
       t.timestamps null: false

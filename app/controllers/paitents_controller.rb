@@ -1,5 +1,5 @@
 class PaitentsController < ApplicationController
-  #before_action :authenticate_user!
+  #before_action :authenticate_technician!
   before_action :set_paitent, only: [:show, :edit, :update, :destroy]
   
   # GET /paitents
