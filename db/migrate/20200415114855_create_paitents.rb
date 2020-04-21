@@ -8,6 +8,7 @@ class CreatePaitents < ActiveRecord::Migration[6.0]
       t.integer :mobile
       t.string :gender
       t.date :dob
+      t.bigint :serialnumber
 
       t.timestamps
     end

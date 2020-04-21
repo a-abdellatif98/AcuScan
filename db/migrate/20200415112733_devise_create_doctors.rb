@@ -37,7 +37,6 @@ class DeviseCreateDoctors < ActiveRecord::Migration[6.0]
       t.bigint :mobile
       t.string :adress
       t.bigint :NationalId
-      #t.integer :Role
       t.string :gender
 
       t.timestamps null: false

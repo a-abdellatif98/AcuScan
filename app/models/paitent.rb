@@ -1,3 +1,5 @@
 class Paitent < ApplicationRecord
     has_many :visits
-end
+    has_many :reports
+    has_many :x_rays
+  end
