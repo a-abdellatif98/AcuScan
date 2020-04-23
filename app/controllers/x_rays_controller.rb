@@ -1,5 +1,6 @@
 class XRaysController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_technician!, only: [:create]
+  before_action :authenticate_doctor!, only: [:show]
   before_action :set_x_ray, only: [:show, :edit, :update, :destroy]
 
   # GET /x_rays
@@ -60,6 +61,9 @@ class XRaysController < ApplicationController
       format.html { redirect_to x_rays_url, notice: 'X ray was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def diagnose
   end
 
   private
