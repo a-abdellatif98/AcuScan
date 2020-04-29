@@ -37,7 +37,8 @@
 <br>
 
 
-<%= link_to 'New Paitent', new_paitent_path %>
+<%= link_to 'New Paitent',  new_paitent_path if(receptionest_signed_in?) %>
+
 <li class="nav-item">
   <%= link_to "Logout", (admin_signed_in?) ? destroy_admin_session_path : destroy_admin_session_path , method: :delete, class: "nav-link" %>
 </li>

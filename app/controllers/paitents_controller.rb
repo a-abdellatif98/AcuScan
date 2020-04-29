@@ -1,9 +1,11 @@
 class PaitentsController < ApplicationController
-  before_action :authenticate_admin!, only: [:index, :show, :edit, :update, :destroy]
-  before_action :authenticate_receptionest!, only: [:create]
-  before_action :authenticate_technician!, only: [:update]
-  before_action :authenticate_doctor!, only: [:show, :update]
+  #before_action :authenticate_admin!, only: [:index, :show, :edit, :update, :destroy]
+  before_action :authenticate_receptionest!, only: [:create, :update]
   before_action :set_paitent, only: [:show, :edit, :update, :destroy]
+  
+  
+  def login
+  end
   
   # GET /paitents
   # GET /paitents.json
