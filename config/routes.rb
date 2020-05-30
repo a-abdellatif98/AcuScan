@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :vists
   resources :x_rays
   resources :reports
   resources :paitents

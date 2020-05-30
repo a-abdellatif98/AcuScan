@@ -1,0 +1,22 @@
+<%= form_with(model: vist, local: true) do |form| %>
+  <% if vist.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(vist.errors.count, "error") %> prohibited this vist from being saved:</h2>
+
+      <ul>
+        <% vist.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :p_serial %>
+    <%= form.text_field :p_serial %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
