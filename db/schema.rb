@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_15_124245) do
+ActiveRecord::Schema.define(version: 2020_04_30_115613) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,12 +55,14 @@ ActiveRecord::Schema.define(version: 2020_04_15_124245) do
     t.string "name"
     t.string "adress"
     t.bigint "National_id"
-    t.integer "visits_id"
     t.integer "mobile"
     t.string "gender"
     t.date "dob"
+    t.bigint "serialnumber"
+    t.bigint "visits_id_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["visits_id_id"], name: "index_paitents_on_visits_id_id"
   end
 
   create_table "receptionests", force: :cascade do |t|
@@ -112,10 +114,21 @@ ActiveRecord::Schema.define(version: 2020_04_15_124245) do
     t.index ["reset_password_token"], name: "index_technicians_on_reset_password_token", unique: true
   end
 
+  create_table "vists", force: :cascade do |t|
+    t.bigint "paitent_serialnumer"
+    t.bigint "report_id_id"
+    t.integer "counter"
+    t.bigint "receptionest_id_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["receptionest_id_id"], name: "index_vists_on_receptionest_id_id"
+    t.index ["report_id_id"], name: "index_vists_on_report_id_id"
+  end
+
   create_table "x_rays", force: :cascade do |t|
     t.string "image_url"
     t.bigint "paitent_id_id"
-    t.string "labele"
+    t.string "label"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["paitent_id_id"], name: "index_x_rays_on_paitent_id_id"

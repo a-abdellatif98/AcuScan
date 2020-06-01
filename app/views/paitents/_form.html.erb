@@ -1,3 +1,5 @@
+<%= render 'layouts/navbar' %>
+<%= render 'layouts/sidenav'
 <%= form_with(model: paitent, local: true) do |form| %>
   <% if paitent.errors.any? %>
     <div id="error_explanation">
@@ -41,6 +43,12 @@
     <%= form.text_field :gender %>
   </div>
 
+
+  <div class="field">
+    <%= form.label :serialnumber %>
+    <%= form.text_field :serialnumber %>
+  </div>
+
   <div class="field">
     <%= form.label :dob %>
     <%= form.date_select :dob %>
@@ -50,3 +58,4 @@
     <%= form.submit %>
   </div>
 <% end %>
+<%= render 'layouts/footer' %>
