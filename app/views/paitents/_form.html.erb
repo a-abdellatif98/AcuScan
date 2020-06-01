@@ -1,61 +1,60 @@
-<%= render 'layouts/navbar' %>
-<%= render 'layouts/sidenav'
+<div>
 <%= form_with(model: paitent, local: true) do |form| %>
-  <% if paitent.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(paitent.errors.count, "error") %> prohibited this paitent from being saved:</h2>
+<% if paitent.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(paitent.errors.count, "error") %> prohibited this paitent from being saved:</h2>
 
-      <ul>
-        <% paitent.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :adress %>
-    <%= form.text_field :adress %>
-  </div>
-
-  <div class="field">
-    <%= form.label :National_id %>
-    <%= form.number_field :National_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :visits_id %>
-    <%= form.number_field :visits_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :mobile %>
-    <%= form.number_field :mobile %>
-  </div>
-
-  <div class="field">
-    <%= form.label :gender %>
-    <%= form.text_field :gender %>
-  </div>
-
-
-  <div class="field">
-    <%= form.label :serialnumber %>
-    <%= form.text_field :serialnumber %>
-  </div>
-
-  <div class="field">
-    <%= form.label :dob %>
-    <%= form.date_select :dob %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <ul>
+    <% paitent.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
 <% end %>
-<%= render 'layouts/footer' %>
+
+<div class="field">
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+</div>
+
+<div class="field">
+  <%= form.label :adress %>
+  <%= form.text_field :adress %>
+</div>
+
+<div class="field">
+  <%= form.label :National_id %>
+  <%= form.number_field :National_id %>
+</div>
+
+<div class="field">
+  <%= form.label :visits_id %>
+  <%= form.number_field :visits_id %>
+</div>
+
+<div class="field">
+  <%= form.label :mobile %>
+  <%= form.number_field :mobile %>
+</div>
+
+<div class="field">
+  <%= form.label :gender %>
+  <%= form.text_field :gender %>
+</div>
+
+
+<div class="field">
+  <%= form.label :serialnumber %>
+  <%= form.text_field :serialnumber %>
+</div>
+
+<div class="field">
+  <%= form.label :dob %>
+  <%= form.date_select :dob %>
+</div>
+
+<div class="actions">
+  <%= form.submit %>
+</div>
+<% end %>
+</div>

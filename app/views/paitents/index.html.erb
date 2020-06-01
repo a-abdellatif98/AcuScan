@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-
+<div>
 <h1>Paitents</h1>
 
 <table>
@@ -45,3 +45,4 @@
 <li class="nav-item">
   <%= link_to "Logout", (admin_signed_in?) ? destroy_admin_session_path : destroy_admin_session_path , method: :delete, class: "nav-link" %>
 </li>
+</div>

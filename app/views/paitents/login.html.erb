@@ -1,41 +1,46 @@
-<h1>Welcome To ACUSCAN</h1>
+<div>
 
-<%if (admin_signed_in?) %>
-<script type="text/javascript">
-  window.location.href="/paitents/index"  
-</script>
-<%= link_to "admin Logout",  destroy_admin_session_path , method: :delete, class: "nav-link" %>
+  <h1>Welcome To ACUSCAN</h1>
 
-<% elsif (doctor_signed_in?) %>
-<script type="text/javascript">
-  window.location.href="/reports/"   
-</script>
-<%= link_to "Doc Logout",  destroy_doctor_session_path , method: :delete, class: "nav-link" %>
+  <%if (admin_signed_in?) %>
+  <script type="text/javascript">
+    window.location.href = "/paitents/index"  
+  </script>
+  <%= link_to "admin Logout",  destroy_admin_session_path , method: :delete, class: "nav-link" %>
 
-<% elsif (receptionest_signed_in?) %>
-<script type="text/javascript">
-  window.location.href="/paitents/"   
-</script>
-<%= link_to "REC Logout", destroy_receptionest_session_path , method: :delete, class: "nav-link" %>
+  <% elsif (doctor_signed_in?) %>
+  <script type="text/javascript">
+    window.location.href = "/reports/"   
+  </script>
+  <%= link_to "Doc Logout",  destroy_doctor_session_path , method: :delete, class: "nav-link" %>
 
-<% elsif (technician_signed_in?) %>
-<script type="text/javascript">
-  window.location.href="/x_rays/"  
-</script><%= link_to "TEch Logout",  destroy_technician_session_path , method: :delete, class: "nav-link" %>
+  <% elsif (receptionest_signed_in?) %>
+  <script type="text/javascript">
+    window.location.href = "/paitents/"   
+  </script>
+  <%= link_to "REC Logout", destroy_receptionest_session_path , method: :delete, class: "nav-link" %>
 
-<% else %>
-<h2>You Are:</h2>
-<li class="nav-item">
-  <%= link_to "Doctor", new_doctor_session_path  %>
-</li>
-<li class="nav-item">
-  <%= link_to "reception", new_receptionest_session_path  %>
-</li>
-<li class="nav-item">
-  <%= link_to "techntion", new_technician_session_path  %>
-</li>
-<li class="nav-item">
-  <%= link_to "admin", new_admin_session_path  %>
-</li>
+  <% elsif (technician_signed_in?) %>
+  <script type="text/javascript">
+    window.location.href = "/x_rays/"  
+  </script><%= link_to "TEch Logout",  destroy_technician_session_path , method: :delete, class: "nav-link" %>
 
-<% end %>
+</div>
+
+<div>
+  <% else %>
+  <h2>You Are:</h2>
+  <li class="nav-item">
+    <%= link_to "Doctor", new_doctor_session_path  %>
+  </li>
+  <li class="nav-item">
+    <%= link_to "reception", new_receptionest_session_path  %>
+  </li>
+  <li class="nav-item">
+    <%= link_to "techntion", new_technician_session_path  %>
+  </li>
+  <li class="nav-item">
+    <%= link_to "admin", new_admin_session_path  %>
+  </li>
+  <% end %>
+</div>
