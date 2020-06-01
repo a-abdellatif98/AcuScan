@@ -49,15 +49,48 @@
 
 <body>
     <div class="d-flex" id="wrapper">
-        <!-- Sidebar -->
         <div class="border-right bg-dark" id="sidebar-wrapper">
             <div class="list-group list-group-flush">
-                <a href="#" class="list-group-item list-group-item-action bg-dark">Dashboard</a>
-                <a href="#" class="list-group-item list-group-item-action bg-dark">Shortcuts</a>
-                <a href="#" class="list-group-item list-group-item-action bg-dark">Overview</a>
-                <a href="#" class="list-group-item list-group-item-action bg-dark">Events</a>
-                <a href="#" class="list-group-item list-group-item-action bg-dark">Profile</a>
-                <a href="#" class="list-group-item list-group-item-action bg-dark">Status</a>
+                <% if doctor_signed_in? %>
+                <b class="list-group-item list-group-item-action bg-light"><%= link_to "AcuScan" , root_path %></b>
+                <b class="list-group-item list-group-item-action bg-light"><%= link_to "Account" , '' %></b>
+                <b class="list-group-item list-group-item-action bg-light"><%= link_to "AcuScan" , root_path %></b>
+                <b class="list-group-item list-group-item-action bg-light"><%= link_to "AcuScan" , root_path %></b>
+                <%= link_to "Doc Logout",  destroy_doctor_session_path , method: :delete, class: "nav-link" %>
+                <% elsif admin_signed_in? %>
+                <b class="list-group-item list-group-item-action bg-light"><%= link_to "AcuScan" , root_path %></b>
+                <b class="list-group-item list-group-item-action bg-light"><%= link_to "Account" , '' %></b>
+                <b class="list-group-item list-group-item-action bg-light"><%= link_to "AcuScan" , root_path %></b>
+                <b class="list-group-item list-group-item-action bg-light"><%= link_to "AcuScan" , root_path %></b>
+                <%= link_to "admin Logout",  destroy_admin_session_path , method: :delete, class: "nav-link" %>
+                <% elsif (receptionest_signed_in?) %>
+                <b class="list-group-item list-group-item-action bg-light"><%= link_to "AcuScan" , root_path %></b>
+                <b class="list-group-item list-group-item-action bg-light"><%= link_to "Account" , '' %></b>
+                <b class="list-group-item list-group-item-action bg-light"><%= link_to "AcuScan" , root_path %></b>
+                <b class="list-group-item list-group-item-action bg-light"><%= link_to "AcuScan" , root_path %></b>
+                <%= link_to "REC Logout", destroy_receptionest_session_path , method: :delete, class: "nav-link" %>
+                <% elsif (technician_signed_in?) %>
+                <b class="list-group-item list-group-item-action bg-light"><%= link_to "AcuScan" , root_path %></b>
+                <b class="list-group-item list-group-item-action bg-light"><%= link_to "Account" , '' %></b>
+                <b class="list-group-item list-group-item-action bg-light"><%= link_to "AcuScan" , root_path %></b>
+                <b class="list-group-item list-group-item-action bg-light"><%= link_to "AcuScan" , root_path %></b>
+                <%=link_to "TEch Logout" , destroy_technician_session_path , method: :delete, class: "nav-link" %>
+                <% else %>
+                <b class="list-group-item list-group-item-action bg-dark"></b>
+
+                <li class="list-group-item list-group-item-action bg-light">
+                    <%= link_to "Doctor", new_doctor_session_path  %>
+                </li>
+                <li class="list-group-item list-group-item-action bg-light">
+                    <%= link_to "reception", new_receptionest_session_path  %>
+                </li>
+                <li class="list-group-item list-group-item-action bg-light">
+                    <%= link_to "techntion", new_technician_session_path  %>
+                </li>
+                <li class="list-group-item list-group-item-action bg-light">
+                    <%= link_to "admin", new_admin_session_path  %>
+                </li>
+                <% end %>
             </div>
         </div>
 </body>

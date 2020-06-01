@@ -3,10 +3,8 @@ class PaitentsController < ApplicationController
   before_action :authenticate_receptionest!, only: [:create, :update]
   before_action :set_paitent, only: [:show, :edit, :update, :destroy]
   
-  
   def login
   end
-  
   # GET /paitents
   # GET /paitents.json
   def index
