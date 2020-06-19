@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class VistsController < ApplicationController
-  before_action :set_vist, only: [:show, :edit, :update, :destroy]
+  before_action :set_vist, only: %i[show edit update destroy]
 
   # GET /vists
   # GET /vists.json
@@ -9,8 +11,7 @@ class VistsController < ApplicationController
 
   # GET /vists/1
   # GET /vists/1.json
-  def show
-  end
+  def show; end
 
   # GET /vists/new
   def new
@@ -18,8 +19,7 @@ class VistsController < ApplicationController
   end
 
   # GET /vists/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /vists
   # POST /vists.json
@@ -62,13 +62,14 @@ class VistsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_vist
-      @vist = Vist.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def vist_params
-      params.require(:vist).permit(:p_serial)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_vist
+    @vist = Vist.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def vist_params
+    params.require(:vist).permit(:p_serial)
+  end
 end

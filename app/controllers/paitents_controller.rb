@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 class PaitentsController < ApplicationController
-  #before_action :authenticate_admin!, only: [:index, :show, :edit, :update, :destroy]
-  before_action :authenticate_receptionest!, only: [:create, :update]
-  before_action :set_paitent, only: [:show, :edit, :update, :destroy]
-  
-  def login
-  end
+  # before_action :authenticate_admin!, only: [:index, :show, :edit, :update, :destroy]
+  before_action :authenticate_receptionest!, only: %i[create update]
+  before_action :set_paitent, only: %i[show edit update destroy]
+
+  def login; end
+
   # GET /paitents
   # GET /paitents.json
   def index
@@ -13,8 +15,7 @@ class PaitentsController < ApplicationController
 
   # GET /paitents/1
   # GET /paitents/1.json
-  def show
-  end
+  def show; end
 
   # GET /paitents/new
   def new
@@ -22,8 +23,7 @@ class PaitentsController < ApplicationController
   end
 
   # GET /paitents/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /paitents
   # POST /paitents.json
@@ -66,13 +66,14 @@ class PaitentsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_paitent
-      @paitent = Paitent.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def paitent_params
-      params.require(:paitent).permit(:name, :adress, :National_id, :visits_id, :mobile, :gender, :dob)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_paitent
+    @paitent = Paitent.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def paitent_params
+    params.require(:paitent).permit(:name, :adress, :National_id, :visits_id, :mobile, :gender, :dob)
+  end
 end

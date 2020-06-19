@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 class XRaysController < ApplicationController
   before_action :authenticate_technician!, only: [:create]
   before_action :authenticate_doctor!, only: [:show]
-  before_action :set_x_ray, only: [:show, :edit, :update, :destroy]
+  before_action :set_x_ray, only: %i[show edit update destroy]
 
   # GET /x_rays
   # GET /x_rays.json
@@ -11,8 +13,7 @@ class XRaysController < ApplicationController
 
   # GET /x_rays/1
   # GET /x_rays/1.json
-  def show
-  end
+  def show; end
 
   # GET /x_rays/new
   def new
@@ -20,8 +21,7 @@ class XRaysController < ApplicationController
   end
 
   # GET /x_rays/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /x_rays
   # POST /x_rays.json
@@ -63,17 +63,17 @@ class XRaysController < ApplicationController
     end
   end
 
-  def diagnose
-  end
+  def diagnose; end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_x_ray
-      @x_ray = XRay.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def x_ray_params
-      params.require(:x_ray).permit(:image_url, :paitent_id, :labele)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_x_ray
+    @x_ray = XRay.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def x_ray_params
+    params.require(:x_ray).permit(:image_url, :paitent_id, :labele)
+  end
 end

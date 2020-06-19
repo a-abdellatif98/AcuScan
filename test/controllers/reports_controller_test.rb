@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'test_helper'
 
 class ReportsControllerTest < ActionDispatch::IntegrationTest
@@ -5,17 +7,17 @@ class ReportsControllerTest < ActionDispatch::IntegrationTest
     @report = reports(:one)
   end
 
-  test "should get index" do
+  test 'should get index' do
     get reports_url
     assert_response :success
   end
 
-  test "should get new" do
+  test 'should get new' do
     get new_report_url
     assert_response :success
   end
 
-  test "should create report" do
+  test 'should create report' do
     assert_difference('Report.count') do
       post reports_url, params: { report: { date: @report.date, doctor_id: @report.doctor_id, label: @report.label, paitent_id: @report.paitent_id } }
     end
@@ -23,22 +25,22 @@ class ReportsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to report_url(Report.last)
   end
 
-  test "should show report" do
+  test 'should show report' do
     get report_url(@report)
     assert_response :success
   end
 
-  test "should get edit" do
+  test 'should get edit' do
     get edit_report_url(@report)
     assert_response :success
   end
 
-  test "should update report" do
+  test 'should update report' do
     patch report_url(@report), params: { report: { date: @report.date, doctor_id: @report.doctor_id, label: @report.label, paitent_id: @report.paitent_id } }
     assert_redirected_to report_url(@report)
   end
 
-  test "should destroy report" do
+  test 'should destroy report' do
     assert_difference('Report.count', -1) do
       delete report_url(@report)
     end
