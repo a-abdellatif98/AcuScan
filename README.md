@@ -14,27 +14,15 @@ rubocop-performance
 
 rubocop-rails
 
-# README
+Configuration
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Database creation
 
-Things you may want to cover:
+Database initialization
 
-* Ruby version
+How to run the test suite
 
-* System dependencies
+Services (job queues, cache servers, search engines, etc.)
 
-* Configuration
+Deployment instructions
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
