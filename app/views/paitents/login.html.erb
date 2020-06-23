@@ -1,11 +1,28 @@
-<!DOCTYPE html>
+<div style = "position:relative; left:350px; top:250px; ">
+<p style=" font-size: 100px;">Welcome to AcuScan</p>
+<p style = "position:relative; left:200px; top:100px; font-size: 25px"> AcuScan For cheast scaning and diangosing online </p>
+</div>
 
-<style>
-    .sh{
-        text-align: justify;
-    }
-</style>
+<div style= "position:relative; left:-300px; top:450px; font-size: 25px" >
 
-<h1 class="sh">
-    Welcome to AcuScan
-</h1>
+<% if doctor_signed_in? %>
+<b class="list-group-item list-group-item-action bg-light"><%= link_to "AcuScan" , root_path %></b>
+<b class="list-group-item list-group-item-action bg-light"><%= link_to "AcuScan" , root_path %></b>
+<%= link_to "Doctor Logout",  destroy_doctor_session_path , method: :delete, class: "nav-link" %>
+
+<% elsif admin_signed_in? %>
+<b class="list-group-item list-group-item-action bg-light"><%= link_to "AcuScan" , root_path %></b>
+<b class="list-group-item list-group-item-action bg-light"><%= link_to "AcuScan" , root_path %></b>
+<%= link_to "Admin Logout",  destroy_admin_session_path , method: :delete, class: "nav-link" %>
+
+<% elsif (receptionest_signed_in?) %>
+<%= link_to "New Paitent" , new_paitent_path ,class: "nav-link"%>
+<%= link_to "New Vist",  new_vist_path ,class: "nav-link" %>
+<%= link_to "Receptionest Logout", destroy_receptionest_session_path , method: :delete, class: "nav-link" %>
+<% elsif (technician_signed_in?) %>
+<b class="list-group-item list-group-item-action bg-light"><%= link_to "AcuScan" , root_path %></b>
+<b class="list-group-item list-group-item-action bg-light"><%= link_to "AcuScan" , root_path %></b>
+<%=link_to "Technician Logout" , destroy_technician_session_path , method: :delete, class: "nav-lin" %>
+<% end %>
+
+</div>

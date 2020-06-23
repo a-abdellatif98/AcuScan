@@ -1,3 +1,5 @@
+<div style = "position: relative; left:100px; top:40px;">
+
 <p id="notice"><%= notice %></p>
 <div>
 <p>
@@ -15,10 +17,6 @@
   <%= @paitent.National_id %>
 </p>
 
-<p>
-  <strong>Visits:</strong>
-  <%= @paitent.visits_id %>
-</p>
 
 <p>
   <strong>Mobile:</strong>
@@ -37,4 +35,5 @@
 
 <%= link_to 'Edit', edit_paitent_path(@paitent) %> |
 <%= link_to 'Back', paitents_path %>
+</div>
 </div>

@@ -74,6 +74,6 @@ class PaitentsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def paitent_params
-    params.require(:paitent).permit(:name, :adress, :National_id, :visits_id, :mobile, :gender, :dob)
+    params.require(:paitent).permit(:name, :adress, :National_id, :mobile, :gender, :dob) #visits_id
   end
 end

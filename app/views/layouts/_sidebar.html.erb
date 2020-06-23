@@ -52,43 +52,43 @@
         <div class="border-right bg-dark" id="sidebar-wrapper">
             <div class="list-group list-group-flush">
                 <% if doctor_signed_in? %>
-                <b class="list-group-item list-group-item-action bg-light"><%= link_to "AcuScan" , root_path %></b>
-                <b class="list-group-item list-group-item-action bg-light"><%= link_to "Account" , '' %></b>
-                <b class="list-group-item list-group-item-action bg-light"><%= link_to "AcuScan" , root_path %></b>
-                <b class="list-group-item list-group-item-action bg-light"><%= link_to "AcuScan" , root_path %></b>
-                <%= link_to "Doc Logout",  destroy_doctor_session_path , method: :delete, class: "nav-link" %>
+                <%= link_to "AcuScan" , root_path , class: "list-group-item list-group-item-action bg-light btn"%>
+                <%= link_to "Account" , '' , class: "list-group-item list-group-item-action bg-light btn"%>
+                <%= link_to "AcuScan" , root_path , class: "list-group-item list-group-item-action bg-light btn"%>
+                <%= link_to "AcuScan" , root_path , class: "list-group-item list-group-item-action bg-light btn" %>
+                <%= link_to "Doctor Logout",  destroy_doctor_session_path , method: :delete, class: "list-group-item list-group-item-action bg-light btn" %>
                 <% elsif admin_signed_in? %>
-                <b class="list-group-item list-group-item-action bg-light"><%= link_to "AcuScan" , root_path %></b>
-                <b class="list-group-item list-group-item-action bg-light"><%= link_to "Account" , '' %></b>
-                <b class="list-group-item list-group-item-action bg-light"><%= link_to "AcuScan" , root_path %></b>
-                <b class="list-group-item list-group-item-action bg-light"><%= link_to "AcuScan" , root_path %></b>
-                <%= link_to "admin Logout",  destroy_admin_session_path , method: :delete, class: "nav-link" %>
+                <%= link_to "AcuScan" , root_path , class: "list-group-item list-group-item-action bg-light btn"%></b>
+                <%= link_to "Account" , '', class: "list-group-item list-group-item-action bg-light btn" %></b>
+                <%= link_to "AcuScan" , root_path , class: "list-group-item list-group-item-action bg-light btn"%></b>
+                <%= link_to "AcuScan" , root_path , class: "list-group-item list-group-item-action bg-light btn"%></b>
+                <%= link_to "Admin Logout",  destroy_admin_session_path , method: :delete, class: "list-group-item list-group-item-action bg-light btn" %>
                 <% elsif (receptionest_signed_in?) %>
-                <b class="list-group-item list-group-item-action bg-light"><%= link_to "AcuScan" , root_path %></b>
-                <b class="list-group-item list-group-item-action bg-light"><%= link_to "Account" , '' %></b>
-                <b class="list-group-item list-group-item-action bg-light"><%= link_to "AcuScan" , root_path %></b>
-                <b class="list-group-item list-group-item-action bg-light"><%= link_to "AcuScan" , root_path %></b>
-                <%= link_to "REC Logout", destroy_receptionest_session_path , method: :delete, class: "nav-link" %>
+                <%= link_to "AcuScan" , root_path , class: "list-group-item list-group-item-action bg-light btn"%>
+                <%= link_to "Account" , edit_receptionest_registration_path , class: "list-group-item list-group-item-action bg-light btn"%>
+                <%= link_to "New Paitent" , new_paitent_path , class: "list-group-item list-group-item-action bg-light btn" %>
+                <%= link_to "New Vist",  new_vist_path , class: "list-group-item list-group-item-action bg-light btn" %>
+                <%= link_to "Receptionest Logout", destroy_receptionest_session_path , method: :delete,  class: "list-group-item list-group-item-action bg-light btn" %>
                 <% elsif (technician_signed_in?) %>
-                <b class="list-group-item list-group-item-action bg-light"><%= link_to "AcuScan" , root_path %></b>
-                <b class="list-group-item list-group-item-action bg-light"><%= link_to "Account" , '' %></b>
-                <b class="list-group-item list-group-item-action bg-light"><%= link_to "AcuScan" , root_path %></b>
-                <b class="list-group-item list-group-item-action bg-light"><%= link_to "AcuScan" , root_path %></b>
-                <%=link_to "TEch Logout" , destroy_technician_session_path , method: :delete, class: "nav-link" %>
+                <%= link_to "AcuScan" , root_path , class: "list-group-item list-group-item-action bg-light btn"%>
+                <%= link_to "Account" , '' , class: "list-group-item list-group-item-action bg-light btn"%>
+                <%= link_to "AcuScan" , root_path , class: "list-group-item list-group-item-action bg-light btn"%>
+                <%= link_to "AcuScan" , root_path , class: "list-group-item list-group-item-action bg-light btn"%>
+                <%=link_to "Technician Logout" , destroy_technician_session_path , method: :delete,  class: "list-group-item list-group-item-action bg-light btn" %>
                 <% else %>
-                <b class="list-group-item list-group-item-action bg-dark"></b>
+                <b class="list-group-item list-group-item-action bg-dark"> You ARE</b>
 
-                <li class="list-group-item list-group-item-action bg-light">
-                    <%= link_to "Doctor", new_doctor_session_path  %>
+                <li>
+                    <%= link_to "Doctor", new_doctor_session_path  , class: "list-group-item list-group-item-action bg-light btn"%>
                 </li>
-                <li class="list-group-item list-group-item-action bg-light">
-                    <%= link_to "reception", new_receptionest_session_path  %>
+                <li >
+                    <%= link_to "Reception", new_receptionest_session_path , class: "list-group-item list-group-item-action bg-light btn" %>
                 </li>
-                <li class="list-group-item list-group-item-action bg-light">
-                    <%= link_to "techntion", new_technician_session_path  %>
+                <li >
+                    <%= link_to "Techntion", new_technician_session_path , class: "list-group-item list-group-item-action bg-light btn" %>
                 </li>
-                <li class="list-group-item list-group-item-action bg-light">
-                    <%= link_to "admin", new_admin_session_path  %>
+                <li >
+                    <%= link_to "Admin", new_admin_session_path , class: "list-group-item list-group-item-action bg-light btn" %>
                 </li>
                 <% end %>
             </div>
