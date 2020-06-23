@@ -6,11 +6,10 @@ class CreatePaitents < ActiveRecord::Migration[6.0]
       t.string :name
       t.string :adress
       t.bigint :National_id
-      t.integer :mobile
+      t.bigint :mobile
       t.string :gender
       t.date :dob
       t.bigint :serialnumber
-      t.references :visits_id
 
       t.timestamps
     end

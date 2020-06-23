@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_30_115613) do
+ActiveRecord::Schema.define(version: 2020_06_23_215848) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,14 +55,14 @@ ActiveRecord::Schema.define(version: 2020_04_30_115613) do
     t.string "name"
     t.string "adress"
     t.bigint "National_id"
-    t.integer "mobile"
+    t.bigint "mobile"
     t.string "gender"
     t.date "dob"
     t.bigint "serialnumber"
-    t.bigint "visits_id_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["visits_id_id"], name: "index_paitents_on_visits_id_id"
+    t.bigint "visit_id", null: false
+    t.index ["visit_id"], name: "index_paitents_on_visit_id"
   end
 
   create_table "receptionests", force: :cascade do |t|
@@ -86,14 +86,14 @@ ActiveRecord::Schema.define(version: 2020_04_30_115613) do
   create_table "reports", force: :cascade do |t|
     t.string "label"
     t.date "date"
-    t.bigint "paitent_id_id"
-    t.bigint "doctor_id_id"
-    t.bigint "xray_id_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["doctor_id_id"], name: "index_reports_on_doctor_id_id"
-    t.index ["paitent_id_id"], name: "index_reports_on_paitent_id_id"
-    t.index ["xray_id_id"], name: "index_reports_on_xray_id_id"
+    t.bigint "paitent_id", null: false
+    t.bigint "doctor_id", null: false
+    t.bigint "x_ray_id", null: false
+    t.index ["doctor_id"], name: "index_reports_on_doctor_id"
+    t.index ["paitent_id"], name: "index_reports_on_paitent_id"
+    t.index ["x_ray_id"], name: "index_reports_on_x_ray_id"
   end
 
   create_table "technicians", force: :cascade do |t|
@@ -114,24 +114,31 @@ ActiveRecord::Schema.define(version: 2020_04_30_115613) do
     t.index ["reset_password_token"], name: "index_technicians_on_reset_password_token", unique: true
   end
 
-  create_table "vists", force: :cascade do |t|
+  create_table "visits", force: :cascade do |t|
     t.bigint "paitent_serialnumer"
-    t.bigint "report_id_id"
     t.integer "counter"
-    t.bigint "receptionest_id_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["receptionest_id_id"], name: "index_vists_on_receptionest_id_id"
-    t.index ["report_id_id"], name: "index_vists_on_report_id_id"
+    t.bigint "receptionest_id", null: false
+    t.bigint "report_id", null: false
+    t.index ["receptionest_id"], name: "index_visits_on_receptionest_id"
+    t.index ["report_id"], name: "index_visits_on_report_id"
   end
 
   create_table "x_rays", force: :cascade do |t|
     t.string "image_url"
-    t.bigint "paitent_id_id"
     t.string "label"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["paitent_id_id"], name: "index_x_rays_on_paitent_id_id"
+    t.bigint "paitent_id", null: false
+    t.index ["paitent_id"], name: "index_x_rays_on_paitent_id"
   end
 
+  add_foreign_key "paitents", "visits"
+  add_foreign_key "reports", "doctors"
+  add_foreign_key "reports", "paitents"
+  add_foreign_key "reports", "x_rays"
+  add_foreign_key "visits", "receptionests"
+  add_foreign_key "visits", "reports"
+  add_foreign_key "x_rays", "paitents"
 end

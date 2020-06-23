@@ -1,13 +1,14 @@
 <p id="notice"><%= notice %></p>
 <div>
 <h1>Paitents</h1>
+<% if doctor_signed_in? %>
 
 <table>
   <thead>
     <tr>
       <th>Name</th>
       <th>Adress</th>
-      <th>National</th>
+      <th>National ID</th>
       <th>Visits</th>
       <th>Mobile</th>
       <th>Gender</th>
@@ -36,11 +37,11 @@
 
 <br>
 
-
-<%= link_to 'New Paitent',  new_paitent_path if(receptionest_signed_in?) %>
-<br>
-<%= link_to 'New Vist',  new_vist_path if(receptionest_signed_in?) %>
-
+<% elsif (receptionest_signed_in?) %>
+  <%= link_to 'New Paitent',  new_paitent_path if(receptionest_signed_in?) %>
+  <br>
+  <%= link_to 'New Vist',  new_vist_path if(receptionest_signed_in?) %>
+<% end %>
 
 <li class="nav-item">
   <%= link_to "Logout", (admin_signed_in?) ? destroy_admin_session_path : destroy_admin_session_path , method: :delete, class: "nav-link" %>
