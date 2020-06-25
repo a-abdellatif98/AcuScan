@@ -3,9 +3,8 @@
 class CreateXRays < ActiveRecord::Migration[6.0]
   def change
     create_table :x_rays do |t|
-      t.string :image_url
-      t.string :label
-
+      t.string :comments
+      
       t.timestamps
     end
   end

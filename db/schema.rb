@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_23_221448) do
+ActiveRecord::Schema.define(version: 2020_06_25_103920) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,13 +52,13 @@ ActiveRecord::Schema.define(version: 2020_06_23_221448) do
   end
 
   create_table "paitents", force: :cascade do |t|
+    t.bigint "serialnumber", null: false
     t.string "name"
     t.string "adress"
     t.bigint "National_id"
     t.bigint "mobile"
     t.string "gender"
     t.date "dob"
-    t.bigint "serialnumber"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -86,9 +86,9 @@ ActiveRecord::Schema.define(version: 2020_06_23_221448) do
     t.date "date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "paitent_id", null: false
     t.bigint "doctor_id", null: false
     t.bigint "x_ray_id", null: false
+    t.bigint "paitent_id", null: false
     t.index ["doctor_id"], name: "index_reports_on_doctor_id"
     t.index ["paitent_id"], name: "index_reports_on_paitent_id"
     t.index ["x_ray_id"], name: "index_reports_on_x_ray_id"
@@ -113,7 +113,6 @@ ActiveRecord::Schema.define(version: 2020_06_23_221448) do
   end
 
   create_table "visits", force: :cascade do |t|
-    t.bigint "paitent_serialnumer"
     t.integer "counter"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -124,12 +123,13 @@ ActiveRecord::Schema.define(version: 2020_06_23_221448) do
   end
 
   create_table "x_rays", force: :cascade do |t|
-    t.string "image_url"
-    t.string "label"
+    t.string "comments"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "paitent_id", null: false
+    t.bigint "report_id", null: false
     t.index ["paitent_id"], name: "index_x_rays_on_paitent_id"
+    t.index ["report_id"], name: "index_x_rays_on_report_id"
   end
 
   add_foreign_key "reports", "doctors"
@@ -138,4 +138,5 @@ ActiveRecord::Schema.define(version: 2020_06_23_221448) do
   add_foreign_key "visits", "receptionests"
   add_foreign_key "visits", "reports"
   add_foreign_key "x_rays", "paitents"
+  add_foreign_key "x_rays", "reports"
 end
