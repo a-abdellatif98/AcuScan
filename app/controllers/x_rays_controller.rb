@@ -74,6 +74,6 @@ class XRaysController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def x_ray_params
-    params.require(:x_ray).permit(:image_url, :paitent_id, :labele)
+    params.require(:x_ray).permit(:paitent_id, :comments, :images)
   end
 end

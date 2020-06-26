@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_25_103920) do
+ActiveRecord::Schema.define(version: 2020_06_25_112843) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -87,10 +87,11 @@ ActiveRecord::Schema.define(version: 2020_06_25_103920) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "paitent_id", null: false
     t.bigint "doctor_id", null: false
+<<<<<<< HEAD
     t.bigint "x_ray_id", null: false
+=======
+>>>>>>> paitents primaryKey http://ruby-journal.com/how-to-override-default-primary-key-id-in-rails/ and technical
     t.index ["doctor_id"], name: "index_reports_on_doctor_id"
-    t.index ["paitent_id"], name: "index_reports_on_paitent_id"
-    t.index ["x_ray_id"], name: "index_reports_on_x_ray_id"
   end
 
   create_table "technicians", force: :cascade do |t|
@@ -126,14 +127,12 @@ ActiveRecord::Schema.define(version: 2020_06_25_103920) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "paitent_id", null: false
-    t.bigint "report_id", null: false
+    t.bigint "report_id"
     t.index ["paitent_id"], name: "index_x_rays_on_paitent_id"
     t.index ["report_id"], name: "index_x_rays_on_report_id"
   end
 
   add_foreign_key "reports", "doctors"
-  add_foreign_key "reports", "paitents"
-  add_foreign_key "reports", "x_rays"
   add_foreign_key "visits", "receptionests"
   add_foreign_key "visits", "reports"
   add_foreign_key "x_rays", "paitents"

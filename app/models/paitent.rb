@@ -1,8 +1,7 @@
 # frozen_string_literal: true
 
 class Paitent < ApplicationRecord
-  #has_many :visits
-  has_many :reports
-  has_many :x_rays
+  has_many :x_rays  through: :serialnumber
+  self.primary_key = 'serialnumber'
 
 end

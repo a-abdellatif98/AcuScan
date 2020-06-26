@@ -3,7 +3,6 @@
 class CreatePaitents < ActiveRecord::Migration[6.0]
   def change
     create_table :paitents do |t|
-      #t.bigint :serialnumber , null: false, unique: true
       t.string :name
       t.string :adress
       t.bigint :National_id
@@ -13,5 +12,6 @@ class CreatePaitents < ActiveRecord::Migration[6.0]
 
       t.timestamps
     end
+
   end
 end

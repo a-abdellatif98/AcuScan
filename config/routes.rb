@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :vists
   resources :x_rays
   resources :reports
-  resources :paitents
+  resources :paitents, param: :serialnumber
   devise_for :technicians
   devise_for :admins
   devise_for :receptionests

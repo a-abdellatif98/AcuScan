@@ -12,8 +12,8 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :image_url %>
-    <%= form.text_field :image_url %>
+    <%= form.label :comments %>
+    <%= form.text_field :comments %>
   </div>
 
   <div class="field">
@@ -21,9 +21,11 @@
     <%= form.text_field :paitent_id %>
   </div>
 
-  <div class="field">
-    <%= form.label :label %>
-    <%= form.text_field :labele %>
+<%= form.file_field :image %>
+
+<div class="field">
+    <%= form.label :report_id %>
+    <%= form.text_field :report_id %>
   </div>
 
   <div class="actions">
