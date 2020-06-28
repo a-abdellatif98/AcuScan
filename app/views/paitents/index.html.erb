@@ -1,8 +1,9 @@
+<div style = "position:relative; left:350px; top:250px; ">
+
 <p id="notice"><%= notice %></p>
 <div>
 <h1>Paitents</h1>
 <% if doctor_signed_in? %>
-
 <table>
   <thead>
     <tr>
@@ -34,16 +35,12 @@
     <% end %>
   </tbody>
 </table>
-
 <br>
-
 <% elsif (receptionest_signed_in?) %>
-  <%= link_to 'New Paitent',  new_paitent_path if(receptionest_signed_in?) %>
-  <br>
-  <%= link_to 'New Vist',  new_vist_path if(receptionest_signed_in?) %>
+ <%= link_to "New Paitent" , new_paitent_path ,class: "nav-link"%>
+<%= link_to "New Vist",  new_vist_path ,class: "nav-link" %>
+<%= link_to "Receptionest Logout", destroy_receptionest_session_path , method: :delete, class: "nav-link" %>
+
 <% end %>
 
-<li class="nav-item">
-  <%= link_to "Logout", (admin_signed_in?) ? destroy_admin_session_path : destroy_admin_session_path , method: :delete, class: "nav-link" %>
-</li>
 </div>
