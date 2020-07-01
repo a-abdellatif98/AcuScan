@@ -12,7 +12,10 @@
 
 <p>
   <strong>Paitent:</strong>
-  <%= @report.paitent_id %>
+</p>
+<p>
+<strong>XRay:</strong>
+  <%= image_tag url_for(@report.x_ray.image.variant(resize: "100x100")) %>
 </p>
 
 <p>
