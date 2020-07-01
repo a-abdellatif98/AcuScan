@@ -19,6 +19,10 @@ gem 'bootstrap'
 gem 'bundler-audit', '~> 0.6.1'
 gem 'rubocop-performance', require: false
 gem 'rubocop-rails', require: false
+gem 'bullet', group: 'development'
+gem 'ruby-growl'
+gem 'ruby_gntp'
+gem "uniform_notifier"
 
 # gem 'uniq_number_id'
 # gem 'redis', '~> 4.0'

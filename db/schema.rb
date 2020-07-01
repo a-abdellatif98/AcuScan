@@ -52,7 +52,6 @@ ActiveRecord::Schema.define(version: 2020_06_25_103920) do
   end
 
   create_table "paitents", force: :cascade do |t|
-    t.bigint "serialnumber", null: false
     t.string "name"
     t.string "adress"
     t.bigint "National_id"
@@ -86,9 +85,9 @@ ActiveRecord::Schema.define(version: 2020_06_25_103920) do
     t.date "date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "paitent_id", null: false
     t.bigint "doctor_id", null: false
     t.bigint "x_ray_id", null: false
-    t.bigint "paitent_id", null: false
     t.index ["doctor_id"], name: "index_reports_on_doctor_id"
     t.index ["paitent_id"], name: "index_reports_on_paitent_id"
     t.index ["x_ray_id"], name: "index_reports_on_x_ray_id"
