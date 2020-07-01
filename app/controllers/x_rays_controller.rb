@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class XRaysController < ApplicationController
-  before_action :authenticate_technician!, only: [:create]
+  before_action :authenticate_technician!, only: %i[:create :show]
   before_action :authenticate_doctor!, only: [:show]
   before_action :set_x_ray, only: %i[show edit update destroy]
 
@@ -30,7 +30,7 @@ class XRaysController < ApplicationController
 
     respond_to do |format|
       if @x_ray.save
-        format.html { redirect_to @x_ray, notice: 'X ray was successfully created.' }
+        format.html { redirect_to root_path, notice: 'X ray was successfully created.' }
         format.json { render :show, status: :created, location: @x_ray }
       else
         format.html { render :new }
@@ -74,6 +74,6 @@ class XRaysController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def x_ray_params
-    params.require(:x_ray).permit(:paitent_id, :comments, :images)
+    params.require(:x_ray).permit(:paitent_id, :comments, :image)
   end
 end

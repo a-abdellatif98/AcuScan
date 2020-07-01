@@ -71,9 +71,8 @@
                 <%= link_to "Receptionest Logout", destroy_receptionest_session_path , method: :delete,  class: "list-group-item list-group-item-action bg-light btn" %>
                 <% elsif (technician_signed_in?) %>
                 <%= link_to "AcuScan" , root_path , class: "list-group-item list-group-item-action bg-light btn"%>
-                <%= link_to "Account" , '' , class: "list-group-item list-group-item-action bg-light btn"%>
-                <%= link_to "AcuScan" , root_path , class: "list-group-item list-group-item-action bg-light btn"%>
-                <%= link_to "AcuScan" , root_path , class: "list-group-item list-group-item-action bg-light btn"%>
+                <%= link_to "Account" , edit_technician_registration_path , class: "list-group-item list-group-item-action bg-light btn"%>
+                <%= link_to "New X_Ray" , new_x_ray_path , class: "list-group-item list-group-item-action bg-light btn"%>
                 <%=link_to "Technician Logout" , destroy_technician_session_path , method: :delete,  class: "list-group-item list-group-item-action bg-light btn" %>
                 <% else %>
                 <b class="list-group-item list-group-item-action bg-dark"> You ARE</b>

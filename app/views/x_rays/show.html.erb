@@ -1,9 +1,9 @@
+<div style = "position: relative; left:100px; top:40px;">
+
+
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Image url:</strong>
-  <%= @x_ray.image_url %>
-</p>
+ Image:<%= image_tag @x_ray.image.variant(resize: "100x100")%>
 
 <p>
   <strong>Paitent:</strong>
@@ -12,8 +12,10 @@
 
 <p>
   <strong>Labele:</strong>
-  <%= @x_ray.labele %>
+  <%= @x_ray.comments %>
 </p>
 
 <%= link_to 'Edit', edit_x_ray_path(@x_ray) %> |
 <%= link_to 'Back', x_rays_path %>
+
+</div>

@@ -21,9 +21,13 @@
     <%= form.text_field :paitent_id %>
   </div>
 
-<%= form.file_field :image %>
+<div class="form-group">  
 
-<div class="field">
+      <%= f.label "Image" %><br />
+  <%= form.file_field :image %>
+    </div>
+
+  <div class="field">
     <%= form.label :report_id %>
     <%= form.text_field :report_id %>
   </div>
