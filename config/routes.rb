@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  resources :vists
+  #resources :vists
   resources :x_rays
   resources :reports
   resources :paitents

@@ -3,7 +3,7 @@
 
 <p id="notice"><%= notice %></p>
 
- Image:<%= image_tag @x_ray.image.variant(resize: "100x100")%>
+ Image:<%= image_tag @x_ray.image.preview(resize_to_limit: [100, 100]%>
 
 <p>
   <strong>Paitent:</strong>
