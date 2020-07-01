@@ -85,12 +85,7 @@ ActiveRecord::Schema.define(version: 2020_06_25_112843) do
     t.date "date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "paitent_id", null: false
     t.bigint "doctor_id", null: false
-<<<<<<< HEAD
-    t.bigint "x_ray_id", null: false
-=======
->>>>>>> paitents primaryKey http://ruby-journal.com/how-to-override-default-primary-key-id-in-rails/ and technical
     t.index ["doctor_id"], name: "index_reports_on_doctor_id"
   end
 
@@ -126,15 +121,12 @@ ActiveRecord::Schema.define(version: 2020_06_25_112843) do
     t.string "comments"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "paitent_id", null: false
     t.bigint "report_id"
-    t.index ["paitent_id"], name: "index_x_rays_on_paitent_id"
     t.index ["report_id"], name: "index_x_rays_on_report_id"
   end
 
   add_foreign_key "reports", "doctors"
   add_foreign_key "visits", "receptionests"
   add_foreign_key "visits", "reports"
-  add_foreign_key "x_rays", "paitents"
   add_foreign_key "x_rays", "reports"
 end
