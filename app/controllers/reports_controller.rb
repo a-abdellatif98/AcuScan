@@ -17,6 +17,7 @@ class ReportsController < ApplicationController
   # GET /reports/new
   def new
     @report = Report.new
+    # @x_ray = XRay.find(params[:x_ray_id])
   end
 
   # GET /reports/1/edit
@@ -26,6 +27,8 @@ class ReportsController < ApplicationController
   # POST /reports.json
   def create
     @report = Report.new(report_params)
+    x_ray = XRay.find(params[:x_ray_id])
+    @report.x_ray = x_ray
 
     respond_to do |format|
       if @report.save
