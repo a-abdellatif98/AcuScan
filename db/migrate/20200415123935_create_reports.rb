@@ -5,7 +5,6 @@ class CreateReports < ActiveRecord::Migration[6.0]
     create_table :reports do |t|
       t.string :label
       t.date :date
-      
 
       t.timestamps
     end

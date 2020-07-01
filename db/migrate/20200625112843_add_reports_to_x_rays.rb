@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AddReportsToXRays < ActiveRecord::Migration[6.0]
   def change
     add_reference :x_rays, :report, foreign_key: true

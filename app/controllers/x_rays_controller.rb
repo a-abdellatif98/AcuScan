@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class XRaysController < ApplicationController
-  before_action :authenticate_technician!, only: %i[:create :show]
+  before_action :authenticate_technician!, only: %i[create show]
   before_action :authenticate_doctor!, only: [:show]
   before_action :set_x_ray, only: %i[show edit update destroy]
 

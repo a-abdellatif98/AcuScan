@@ -62,7 +62,6 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
- 
   config.after_initialize do
     Bullet.enable = true
     Bullet.alert = true
@@ -72,40 +71,39 @@ Rails.application.configure do
     Bullet.add_footer = true
   end
 
-
-  #Bullet.n_plus_one_query_enable     = true
-  #Bullet.unused_eager_loading_enable = true
-  #Bullet.counter_cache_enable        = true
-#
-  #Bullet.add_whitelist :type => :n_plus_one_query, :class_name => "Post", :association => :comments
-  #Bullet.add_whitelist :type => :unused_eager_loading, :class_name => "Post", :association => :comments
-  #Bullet.add_whitelist :type => :counter_cache, :class_name => "Country", :association => :cities
-  #UniformNotifier.alert = true
-  #UniformNotifier.alert = { :attributes => { :nonce => 'mySecret-nonce', 'data-key' => 'value' } }
-  #UniformNotifier.console = true
-  #UniformNotifier.console = { :attributes => { :nonce => 'mySecret-nonce', 'data-key' => 'value' } }
-  #UniformNotifier.rails_logger = true
-  #UniformNotifier.airbrake = true
-  #UniformNotifier.airbrake = { :error_class => Exception }
-  #UniformNotifier.honeybadger = true
-  #UniformNotifier.honeybadger = { :error_class => 'Exception' }
-  #UniformNotifier.rollbar = true
-  #UniformNotifier.rollbar = { :level => 'warning' }
-  #UniformNotifier.bugsnag = true
-  #UniformNotifier.bugsnag = { :api_key => 'something' }
-  #logger = File.open('notify.log', 'a+')
-  #logger.sync = true
-  #UniformNotifier.customized_logger = logger
+  # Bullet.n_plus_one_query_enable     = true
+  # Bullet.unused_eager_loading_enable = true
+  # Bullet.counter_cache_enable        = true
+  #
+  # Bullet.add_whitelist :type => :n_plus_one_query, :class_name => "Post", :association => :comments
+  # Bullet.add_whitelist :type => :unused_eager_loading, :class_name => "Post", :association => :comments
+  # Bullet.add_whitelist :type => :counter_cache, :class_name => "Country", :association => :cities
+  # UniformNotifier.alert = true
+  # UniformNotifier.alert = { :attributes => { :nonce => 'mySecret-nonce', 'data-key' => 'value' } }
+  # UniformNotifier.console = true
+  # UniformNotifier.console = { :attributes => { :nonce => 'mySecret-nonce', 'data-key' => 'value' } }
+  # UniformNotifier.rails_logger = true
+  # UniformNotifier.airbrake = true
+  # UniformNotifier.airbrake = { :error_class => Exception }
+  # UniformNotifier.honeybadger = true
+  # UniformNotifier.honeybadger = { :error_class => 'Exception' }
+  # UniformNotifier.rollbar = true
+  # UniformNotifier.rollbar = { :level => 'warning' }
+  # UniformNotifier.bugsnag = true
+  # UniformNotifier.bugsnag = { :api_key => 'something' }
+  # logger = File.open('notify.log', 'a+')
+  # logger.sync = true
+  # UniformNotifier.customized_logger = logger
 
   ## growl without password
-  #UniformNotifier.growl = true
+  # UniformNotifier.growl = true
   ## growl with passowrd
-  #UniformNotifier.growl = { :password => 'growl password' }
-  #UniformNotifier.terminal_notifier = true
+  # UniformNotifier.growl = { :password => 'growl password' }
+  # UniformNotifier.terminal_notifier = true
   # raise an error
-  #UniformNotifier.raise = true # raise a generic exception
+  # UniformNotifier.raise = true # raise a generic exception
 
-  class MyExceptionClass < Exception; end
+  class MyExceptionClass < RuntimeError; end
   UniformNotifier.raise = MyExceptionClass # raise a custom exception type
 
   UniformNotifier.raise = false # don't raise errors

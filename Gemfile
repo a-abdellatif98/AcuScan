@@ -5,24 +5,24 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.3'
-gem 'rails', '~> 6.0.2', '>= 6.0.2.1'
-gem 'pg'
-gem 'puma', '~> 4.1'
-gem 'sass-rails', '>= 6'
-gem 'webpacker', '~> 4.0'
-gem 'turbolinks', '~> 5'
-gem 'jbuilder', '~> 2.7'
-gem 'devise'
-gem 'image_processing', '~> 1.2'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'bootstrap'
+gem 'bullet', group: 'development'
 gem 'bundler-audit', '~> 0.6.1'
+gem 'devise'
+gem 'image_processing', '~> 1.2'
+gem 'jbuilder', '~> 2.7'
+gem 'pg'
+gem 'puma', '~> 4.1'
+gem 'rails', '~> 6.0.2', '>= 6.0.2.1'
 gem 'rubocop-performance', require: false
 gem 'rubocop-rails', require: false
-gem 'bullet', group: 'development'
 gem 'ruby-growl'
 gem 'ruby_gntp'
-gem "uniform_notifier"
+gem 'sass-rails', '>= 6'
+gem 'turbolinks', '~> 5'
+gem 'uniform_notifier'
+gem 'webpacker', '~> 4.0'
 
 # gem 'uniq_number_id'
 # gem 'redis', '~> 4.0'
@@ -34,9 +34,9 @@ end
 
 group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
-  gem 'web-console', '>= 3.3.0'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'web-console', '>= 3.3.0'
 end
 
 group :test do

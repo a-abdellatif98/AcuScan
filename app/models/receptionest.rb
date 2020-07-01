@@ -7,7 +7,7 @@ class Receptionest < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :email, presence: true, uniqueness: true, confirmation: true
- # validates :mobile,      presence: { message: "must be given please" }, uniqueness: true, length: { is: 11 }
+  # validates :mobile,      presence: { message: "must be given please" }, uniqueness: true, length: { is: 11 }
   validates :NationalId, presence: { message: 'must be given please' }, uniqueness: true, length: { is: 14 }
 
   has_many :visits
