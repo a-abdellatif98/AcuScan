@@ -51,8 +51,8 @@
       <div class="list-group list-group-flush">
         <% if doctor_signed_in? %>
           <%= link_to "AcuScan" , root_path , class: "list-group-item list-group-item-action bg-light btn"%>
-          <%= link_to "Account" , '' , class: "list-group-item list-group-item-action bg-light btn"%>
-          <%= link_to "AcuScan" , root_path , class: "list-group-item list-group-item-action bg-light btn"%>
+          <%= link_to "Account" , edit_doctor_registration_path , class: "list-group-item list-group-item-action bg-light btn"%>
+          <%= link_to "X_rays" , x_rays_path , class: "list-group-item list-group-item-action bg-light btn"%>
           <%= link_to "AcuScan" , root_path , class: "list-group-item list-group-item-action bg-light btn" %>
           <%= link_to "Doctor Logout",  destroy_doctor_session_path , method: :delete, class: "list-group-item list-group-item-action bg-light btn" %>
         <% elsif admin_signed_in? %>

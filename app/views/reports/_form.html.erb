@@ -1,3 +1,5 @@
+<div style = "position:relative; left:350px; top:250px; ">
+
 <%= form_with(model: report, local: true, url: url_for(create_xray_report_path)) do |form| %>
   <% if report.errors.any? %>
     <div id="error_explanation">
@@ -34,3 +36,4 @@
     <%= form.submit %>
   </div>
 <% end %>
+</div>

@@ -81,6 +81,7 @@ ActiveRecord::Schema.define(version: 2020_07_01_215831) do
     t.date "dob"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "serialnumber"
   end
 
   create_table "receptionests", force: :cascade do |t|
@@ -144,8 +145,9 @@ ActiveRecord::Schema.define(version: 2020_07_01_215831) do
     t.string "comments"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "paitent_id", null: false
-    t.index ["paitent_id"], name: "index_x_rays_on_paitent_id"
+    t.bigint "paitent_serialnumber"
+    t.bigint "technicians_id"
+    t.index ["technicians_id"], name: "index_x_rays_on_technicians_id"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
@@ -153,5 +155,5 @@ ActiveRecord::Schema.define(version: 2020_07_01_215831) do
   add_foreign_key "reports", "x_rays"
   add_foreign_key "visits", "receptionests"
   add_foreign_key "visits", "reports"
-  add_foreign_key "x_rays", "paitents"
+  add_foreign_key "x_rays", "technicians", column: "technicians_id"
 end

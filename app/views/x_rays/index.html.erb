@@ -15,9 +15,9 @@
   <tbody>
     <% @x_rays.each do |x_ray| %>
       <tr>
-        <td><%= x_ray.image_url %></td>
+        <td><%= image_tag url_for(x_ray.image.variant(resize: "100x100")) %></td>
         <td><%= x_ray.paitent_id %></td>
-        <td><%= x_ray.labele %></td>
+        <td><%= x_ray.comments %></td>
         <td><%= link_to 'Show', x_ray %></td>
         <td><%= link_to 'Edit', edit_x_ray_path(x_ray) %></td>
         <td><%= link_to 'Destroy', x_ray, method: :delete, data: { confirm: 'Are you sure?' } %></td>
