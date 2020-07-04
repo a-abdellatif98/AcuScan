@@ -3,11 +3,10 @@
 
 <p id="notice"><%= notice %></p>
 
- Image:<%= image_tag url_for(@x_ray.image.variant(resize: "100x100"))%>
-<p>
-  <strong>Paitent:</strong>
-  <%= @x_ray.paitent_id %>
-</p>
+ Image:
+ <br>
+ <%= image_tag url_for(@x_ray.image.variant(resize: "500x500"))%>
+
 
 <p>
   <strong>Labele:</strong>
@@ -15,6 +14,7 @@
 </p>
 
 <%= link_to 'Edit', edit_x_ray_path(@x_ray) %> |
-<%= link_to 'Back', x_rays_path %>
+<%= link_to 'Back', x_rays_path %> |
+<%= link_to "New Report", controller: "reports", action: "new", x_ray_id: @x_ray.id  %>
 
 </div>

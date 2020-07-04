@@ -3,7 +3,7 @@
 <p id="notice"><%= notice %></p>
 <div>
 <h1>Paitents</h1>
-<% if doctor_signed_in? %>
+<% if Admin_signed_in? %>
 <table>
   <thead>
     <tr>
@@ -24,7 +24,7 @@
       <td><%= paitent.name %></td>
       <td><%= paitent.adress %></td>
       <td><%= paitent.National_id %></td>
-      <td><%= paitent.visits_id %></td>
+      <td><%= paitent.serialnumber %></td>
       <td><%= paitent.mobile %></td>
       <td><%= paitent.gender %></td>
       <td><%= paitent.dob %></td>

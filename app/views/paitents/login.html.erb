@@ -11,7 +11,7 @@
 
 <% if doctor_signed_in? %>
 <b class="list-group-item list-group-item-action bg-light"><%= link_to "AcuScan" , root_path %></b>
-<b class="list-group-item list-group-item-action bg-light"><%= link_to "AcuScan" , root_path %></b>
+<b class="list-group-item list-group-item-action bg-light"><%= link_to "X_Rays" , controller: "x_rays", action: "index" %></b>
 <%= link_to "Doctor Logout",  destroy_doctor_session_path , method: :delete, class: "nav-link" %>
 
 <% elsif admin_signed_in? %>
@@ -21,7 +21,7 @@
 
 <% elsif (receptionest_signed_in?) %>
 <%= link_to "New Paitent" , new_paitent_path ,class: "nav-link"%>
-<%= link_to "New Vist",  new_vist_path ,class: "nav-link" %>
+<%= link_to "New Vist",  's' ,class: "nav-link" %>
 <%= link_to "Receptionest Logout", destroy_receptionest_session_path , method: :delete, class: "nav-link" %>
 <% elsif (technician_signed_in?) %>
 <%= link_to "Account" , edit_technician_registration_path , class: "list-group-item list-group-item-action bg-light btn"%>

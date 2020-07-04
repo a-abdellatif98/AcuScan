@@ -1,13 +1,15 @@
+<div style = "position:relative; left:350px; top:250px; ">
+
 <p id="notice"><%= notice %></p>
 
-<h1>X Rays</h1>
+<h1 style = "position:relative; left:-250px; top:-220px">X Rays</h1>
 
-<table>
+<table style= "position:relative; left:-250px; top:-200px">
   <thead>
     <tr>
-      <th>Image url</th>
-      <th>Paitent</th>
-      <th>Labele</th>
+      <th>Image url | &nbsp; </th>
+      <th>Paitent |&nbsp; </th>
+      <th>Labele | &nbsp;</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,12 +17,11 @@
   <tbody>
     <% @x_rays.each do |x_ray| %>
       <tr>
-        <td><%= image_tag url_for(x_ray.image.variant(resize: "100x100")) %></td>
-        <td><%= x_ray.paitent_id %></td>
-        <td><%= x_ray.comments %></td>
+        
         <td><%= link_to 'Show', x_ray %></td>
         <td><%= link_to 'Edit', edit_x_ray_path(x_ray) %></td>
-        <td><%= link_to 'Destroy', x_ray, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to "New Report", controller: "reports", action: "new", x_ray_id: x_ray.id  %></td>
+
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +29,4 @@
 
 <br>
 
-<%= link_to 'New X Ray', new_x_ray_path %>
+</div>

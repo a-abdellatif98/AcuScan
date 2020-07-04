@@ -1,4 +1,6 @@
-<div style = "position:relative; left:350px; top:250px; ">
+
+
+<div style = "position:relative; left:200px; top:150px; ">
 
 
 <p id="notice"><%= notice %></p>
@@ -14,11 +16,8 @@
 </p>
 
 <p>
-  <strong>Paitent:</strong>
-</p>
-<p>
 <strong>XRay:</strong>
-  <%= image_tag url_for(@report.x_ray.image.variant(resize: "100x100")) %>
+  <%= image_tag url_for(@report.x_ray.image.variant(resize: "500x500")) %>
 </p>
 
 <p>
