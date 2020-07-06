@@ -1,5 +1,7 @@
 <div style = "position:relative; left:100px; top:40px;">
 
+<%if admin_signed_in?  %>
+
   <h2>Sign up</h2>
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -62,4 +64,6 @@
 
   <%= render "devise/shared/links" %>
 </div>
-
+<% else  %>
+<h1 style = "position:relative; left:-20px; top:30px; font-size:70px;"> YOU ARE NOT <br> AUTHORIZED FOR THIS PAGE </h1>
+<% end %>
