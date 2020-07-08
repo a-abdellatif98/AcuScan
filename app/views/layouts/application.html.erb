@@ -1,21 +1,26 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Acuscan</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-  <body>
-    <% render 'layouts/navbar' %>
-    <%= render 'layouts/sidebar' %>
-    <%= yield %>
-    </div>
-    <div>
-      <!-- <%= render 'layouts/footer' %>-->
-    </div>
-  </body>
+
+<head>
+  <title>Acuscan</title>
+  <meta charset="UTF-8">
+  <meta name="AcuSCan For Chest X-Rays Diagnosing">
+  <meta name="keywords" content="scan, chest, x-ray, x-rays, diagnos, diagnosing, image processing, deep learning, computer vision">
+  <meta name="author" content="Ahmed M. Abdellatif @a-abdellatif98">
+
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+  <%= render 'layouts/navbar' %>
+  <%= render 'layouts/sidebar' %>
+  <%= yield %>
+</body>
+
 </html>

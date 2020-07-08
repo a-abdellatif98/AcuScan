@@ -7,7 +7,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.6.3'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'bootstrap'
-gem 'bullet', group: 'development'
+gem 'bullet', '~> 6.1.0'
 gem 'bundler-audit', '~> 0.6.1'
 gem 'devise'
 gem 'image_processing', '~> 1.2'
