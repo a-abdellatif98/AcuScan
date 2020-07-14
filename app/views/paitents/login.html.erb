@@ -1,27 +1,27 @@
-<div style = "position:relative; left:350px; top:250px; ">
+<div style = "position:relative; left:100px; top:70px; background:rgba(1, 1, 1, 0.68); padding: 100px 400px;">
 
 <p id="notice"><%= notice %></p>
 
 
-<p style=" font-size: 100px;">Welcome to AcuScan</p>
-<p style = "position:relative; left:200px; top:100px; font-size: 25px"> AcuScan For cheast scaning and diangosing online </p>
+<p style="font-size: 50px;">Welcome to AcuScan</p>
+<p style="position:relative; left:00px; top:100px; font-size: 25px"> AcuScan For cheast scaning and diangosing online </p>
 </div>
 
-<div style= "position:relative; left:-300px; top:450px; font-size: 25px" >
+<div style= "position:relative; left:-700px; top:450px; font-size: 25px" >
 
 <% if doctor_signed_in? %>
-<b class="list-group-item list-group-item-action bg-light"><%= link_to "Account" , edit_doctor_registration_path%>
+<b class="list-group-item list-group-item-action bg-light"><%= link_to current_doctor.name , edit_doctor_registration_path%>
 </b>
 <b class="list-group-item list-group-item-action bg-light"><%= link_to "X_Rays" , controller: "x_rays", action: "index" %></b>
 <%= link_to "Doctor Logout",  destroy_doctor_session_path , method: :delete, class: "list-group-item list-group-item-action bg-light" %>
 
 <% elsif (receptionest_signed_in?) %>
-<%= link_to "New Paitent" , new_paitent_path ,class: "nav-link"%>
-<%= link_to "New Vist",  's' ,class: "nav-link" %>
-<%= link_to "Receptionest Logout", destroy_receptionest_session_path , method: :delete, class: "nav-link" %>
+<%= link_to "New Paitent" , new_paitent_path ,class: "list-group-item list-group-item-action bg-light"%>
+<%= link_to "New Vist",  's' ,class: "list-group-item list-group-item-action bg-light" %>
+<%= link_to "Receptionest Logout", destroy_receptionest_session_path , method: :delete, class: "list-group-item list-group-item-action bg-light" %>
 
 <% elsif (technician_signed_in?) %>
-<%= link_to "Account" , edit_technician_registration_path , class: "list-group-item list-group-item-action bg-light btn"%>
+<%= link_to current_technician.name , edit_technician_registration_path , class: "list-group-item list-group-item-action bg-light btn"%>
 <%= link_to "New X_Ray" , new_x_ray_path , class: "list-group-item list-group-item-action bg-light btn"%>
 <%=link_to "Technician Logout" , destroy_technician_session_path , method: :delete, class: "list-group-item list-group-item-action bg-light btn" %>
 <% end %>
