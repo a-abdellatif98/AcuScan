@@ -7,15 +7,18 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 1.times do
-    admin = Admin.new({"name"=>"Ahmed", 
+
+    admin = Admin.new({
+        "name"=>"Ahmed", 
         "dob"=>"1998-01-05", 
         "mobile"=>"01004278945", 
         "adress"=>"ahmed asdmo",
-         "NationalId"=>"98765437101234",
-         "gender"=>"male", 
-         "email"=>"ahmed.abdelatife@gmail.com", 
-         "password"=>"5198**", 
-         "password_confirmation"=>"5198**"})
+        "NationalId"=>"98765437101234",
+        "gender"=>"male", 
+        "email"=>"ahmed.abdelatife@gmail.com", 
+        "password"=>"5198**", 
+        "password_confirmation"=>"5198**"
+        })
+
     admin.save!
 end
-p "Created Initail Admin"
