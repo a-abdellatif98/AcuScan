@@ -26,34 +26,39 @@
   <div class="d-flex" id="wrapper">
     <div class="border-right bg-dark" id="sidebar-wrapper">
       <div class="list-group list-group-flush">
+        <%= link_to "AcuScan" , root_path , class: "list-group-item list-group-item-action bg-light btn"%>
 
         <% if doctor_signed_in? %>
         <%= link_to current_doctor.name , edit_doctor_registration_path , class: "list-group-item list-group-item-action bg-light btn"%>
-        <%= link_to "AcuScan" , root_path , class: "list-group-item list-group-item-action bg-light btn"%>
         <%= link_to "X_rays" , x_rays_path , class: "list-group-item list-group-item-action bg-light btn"%>
         <%= link_to "Doctor Logout",  destroy_doctor_session_path , method: :delete, class: "list-group-item list-group-item-action bg-light btn" %>
 
         <% elsif admin_signed_in? %>
         <%= link_to current_admin.name , edit_admin_registration_path, class: "list-group-item list-group-item-action bg-light btn" %></b>
-        <%= link_to "AcuScan" , root_path , class: "list-group-item list-group-item-action bg-light btn"%></b>
         <%= link_to "Add Doctor" , new_doctor_registration_path , class: "list-group-item list-group-item-action bg-light btn"%></b>
         <%= link_to "Add Receptionest" , new_receptionest_registration_path , class: "list-group-item list-group-item-action bg-light btn"%></b>
         <%= link_to "Add Techniction" , new_technician_registration_path , class: "list-group-item list-group-item-action bg-light btn"%></b>
         <%= link_to "Admin Logout",  destroy_admin_session_path , method: :delete, class: "list-group-item list-group-item-action bg-light btn" %>
-        
+
         <% elsif (receptionest_signed_in?) %>
-       <%= link_to current_receptionest.name , edit_receptionest_registration_path , class: "list-group-item list-group-item-action bg-light btn"%>
-        <%= link_to "AcuScan" , root_path , class: "list-group-item list-group-item-action bg-light btn"%>
+        <%= link_to current_receptionest.name , edit_receptionest_registration_path , class: "list-group-item list-group-item-action bg-light btn"%>
         <%= link_to "New Paitent" , new_paitent_path , class: "list-group-item list-group-item-action bg-light btn" %>
         <% link_to "New Vist",  '' , class: "list-group-item list-group-item-action bg-light btn" %>
         <%= link_to "Receptionest Logout", destroy_receptionest_session_path , method: :delete,  class: "list-group-item list-group-item-action bg-light btn" %>
-        
+        <%= form_tag(search_page_path, :method => "get", ) do %>
+        <div class="input-group">
+          <%= search_field_tag :search, params[:search], placeholder: "Search", class: "form-control" %>
+          <div class="input-group-btn">
+            <%= button_tag "Search", :class => ' btn-info glyphicon glyphicon-search',:name => nil%>
+          </div>
+        </div>
+        <% end %>s
+
         <% elsif (technician_signed_in?) %>
         <%= link_to current_technician.name , edit_technician_registration_path , class: "list-group-item list-group-item-action bg-light btn"%>
-        <%= link_to "AcuScan" , root_path , class: "list-group-item list-group-item-action bg-light btn"%>
         <%= link_to "New X_Ray" , new_x_ray_path , class: "list-group-item list-group-item-action bg-light btn"%>
         <%=link_to "Technician Logout" , destroy_technician_session_path , method: :delete,  class: "list-group-item list-group-item-action bg-light btn" %>
-        
+
         <% else %>
         <b class="list-group-item list-group-item-action bg-dark"> You ARE</b>
         <%= link_to "Doctor", new_doctor_session_path  , class: "list-group-item list-group-item-action bg-light btn"%>

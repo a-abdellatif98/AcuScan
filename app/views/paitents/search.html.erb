@@ -1,0 +1,8 @@
+<div style="position: relative; left:100px; top:40px;">
+
+    <h3>Search Result</h3>
+    <% @results.each do |result| %>
+    <%= result.name %>
+    <%= link_to 'Show', result %>
+    <% end %>
+</div>

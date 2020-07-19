@@ -65,6 +65,15 @@ class PaitentsController < ApplicationController
     end
   end
 
+  def search  
+    if params[:search].blank?  
+      redirect_to(root_path, alert: "Empty field!") and return  
+    else
+      @parameter = params[:search].downcase  
+      @results = Paitent.all.where("lower(name) LIKE :search", search: @parameter)  
+    end
+  end
+
   private
 
   # Use callbacks to share common setup or constraints between actions.
@@ -74,6 +83,6 @@ class PaitentsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def paitent_params
-    params.require(:paitent).permit(:name, :adress, :National_id, :mobile, :gender, :dob, :serialnumber) # visits_id
+    params.require(:paitent).permit(:name, :adress, :National_id, :mobile, :gender, :dob)#, :serialnumber) # visits_id
   end
 end
