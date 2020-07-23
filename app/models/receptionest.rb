@@ -10,5 +10,4 @@ class Receptionest < ApplicationRecord
   #validates :mobile,      presence: { message: "must be given please" }, uniqueness: true, length: { is: 11 }
   validates :NationalId, presence: { message: 'must be given please' }, uniqueness: true, length: { is: 14 }
 
-  has_many :visits
 end

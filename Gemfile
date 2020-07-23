@@ -23,7 +23,7 @@ gem 'sass-rails', '>= 6'
 gem 'turbolinks', '~> 5'
 gem 'uniform_notifier'
 gem 'webpacker', '~> 4.0'
-
+gem 'httparty'
 # gem 'uniq_number_id'
 # gem 'redis', '~> 4.0'
 # gem 'bcrypt', '~> 3.1.7'

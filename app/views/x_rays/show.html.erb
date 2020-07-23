@@ -13,6 +13,8 @@
   <%= @x_ray.comments %>
 </p>
 
+<%= @x_ray.suggestion %>
+
 <%= link_to 'Edit', edit_x_ray_path(@x_ray) %> |
 <%= link_to 'Back', x_rays_path %> |
 <%= link_to "New Report", controller: "reports", action: "new", x_ray_id: @x_ray.id  %>
