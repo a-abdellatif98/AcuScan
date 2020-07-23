@@ -7,7 +7,7 @@ class XRay < ApplicationRecord
   after_create :diagnose
 
   def diagnose
-    DiagnoseXRayJob.perform_later(self)
+   DiagnoseXRayJob.perform_later(self)
   end
 
 end
