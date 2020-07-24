@@ -7,7 +7,7 @@ class DiagnoseXRayJob < ApplicationJob
   
   def perform(xray) 
       getthefile = rails_blob_path(xray.image, disposition: "attachment", only_path: true)
-      y = Down.download("http://acuscan.herokuapp.com/"+ getthefile)
+      y = Down.download("http://localhost:3000/"+ getthefile)
       response = HTTParty.post("https://diagnosing.herokuapp.com/analyze_image", body: { file: y.open })
       puts response.code
       body = JSON.parse(response.body) 

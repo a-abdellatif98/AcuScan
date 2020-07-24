@@ -12,9 +12,16 @@
   <strong>Labele:</strong>
   <%= @x_ray.comments %>
 </p>
-
+ <strong>Suggestion:</strong>
 <%= @x_ray.suggestion %>
+<br>
 
+<p>
+  <strong>tehcnican:</strong>
+  <%= @x_ray.technicians_id %>
+</p>
+
+<%= link_to  "Generate Suggestion", x_ray_diagnose_path(@x_ray) %>
 <%= link_to 'Edit', edit_x_ray_path(@x_ray) %> |
 <%= link_to 'Back', x_rays_path %> |
 <%= link_to "New Report", controller: "reports", action: "new", x_ray_id: @x_ray.id  %>

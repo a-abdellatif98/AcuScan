@@ -3,7 +3,7 @@
 class XRaysController < ApplicationController
   before_action :authenticate_doctor!, only: [:show]
   before_action :authenticate_technician!, only: %i[create]
-  before_action :set_x_ray, only: %i[show edit update destroy]
+  before_action :set_x_ray, only: %i[show edit update destroy diagnose]
 
   # GET /x_rays
   # GET /x_rays.json
@@ -25,6 +25,8 @@ class XRaysController < ApplicationController
 
   # POST /x_rays
   # POST /x_rays.json
+
+
   def create
     @x_ray = XRay.new(x_ray_params)
 
@@ -63,7 +65,14 @@ class XRaysController < ApplicationController
     end
   end
 
-  def diagnose; end
+  def diagnose
+    DiagnoseXRayJob.perform_later(@x_ray)
+    respond_to do |format|
+      format.html { redirect_to @x_ray, notice: 'wait until the suggestions created.' }
+    end
+  end
+
+
 
   private
 
@@ -74,6 +83,6 @@ class XRaysController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def x_ray_params
-    params.require(:x_ray).permit(:paitent_id, :comments, :image)
+    params.require(:x_ray).permit(:paitent_id, :comments, :image, :paitent_serialnumber,:technicians_id)
   end
 end

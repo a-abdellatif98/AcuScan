@@ -4,7 +4,7 @@ class XRay < ApplicationRecord
   has_many :reports
   has_one_attached :image
 
-  after_create :diagnose
+  after_create_commit :diagnose
 
   def diagnose
    DiagnoseXRayJob.perform_later(self)

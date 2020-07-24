@@ -13,6 +13,10 @@
     <%= form.label :comments %>
     <%= form.text_field :comments %>
   </div>
+  <div>
+  <%= form.label :technicians_id %>
+<%= form.text_field :technicians_id %>
+</div>  
   <div class="field">
     <%= form.label :paitent_serialnumber %>
     <%= form.text_field :paitent_serialnumber %>
@@ -25,4 +29,6 @@
   <div class="actions">
     <%= form.submit %>
   </div>
+
+  <%= current_technician  %>
 <% end %>
