@@ -26,7 +26,8 @@
   <div class="d-flex" id="wrapper">
     <div class="border-right bg-dark" id="sidebar-wrapper">
       <div class="list-group list-group-flush">
-        <%= link_to "AcuScan" , root_path , class: "list-group-item list-group-item-action bg-light btn"%>
+	        <%= image_tag("/assets/logo.png" , size: "200x100")  %>
+	      <%= link_to "AcuScan" , root_path , class: "list-group-item list-group-item-action bg-light btn"%>
 
         <% if doctor_signed_in? %>
         <%= link_to current_doctor.name , edit_doctor_registration_path , class: "list-group-item list-group-item-action bg-light btn"%>
