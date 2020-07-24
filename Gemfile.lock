@@ -94,6 +94,8 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    down (5.1.1)
+      addressable (~> 2.5)
     erubi (1.9.0)
     execjs (2.7.0)
     ffi (1.13.1)
@@ -281,6 +283,7 @@ DEPENDENCIES
   byebug
   capybara (>= 2.15)
   devise
+  down (~> 5.0)
   httparty
   image_processing (~> 1.2)
   jbuilder (~> 2.7)
