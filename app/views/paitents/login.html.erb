@@ -17,7 +17,6 @@
 
 <% elsif (receptionest_signed_in?) %>
 <%= link_to "New Paitent" , new_paitent_path ,class: "list-group-item list-group-item-action bg-light"%>
-<%= link_to "New Vist",  's' ,class: "list-group-item list-group-item-action bg-light" %>
 <%= link_to "Receptionest Logout", destroy_receptionest_session_path , method: :delete, class: "list-group-item list-group-item-action bg-light" %>
 
 <% elsif (technician_signed_in?) %>
